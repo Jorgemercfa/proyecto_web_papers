@@ -3,11 +3,15 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from './views/Home-item.vue';
 import AboutItem from './views/About-item.vue';
 import NewsLetter from './views/NewsLetter-item.vue';
+import Articles from './views/Articles-item.vue';
+import Opinion from './views/Opinion-item.vue';
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/About-item', name: 'About', component: AboutItem },
   { path: '/NewsLetter-item', name: 'NewsLetter', component: NewsLetter },
+  { path: '/articles', name: 'Articles', component: Articles },
+  { path: '/opinion', name: 'Opinion', component: Opinion },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 

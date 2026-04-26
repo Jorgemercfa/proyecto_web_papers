@@ -4,18 +4,19 @@
       <router-link @click="closeMenu" to="/" class="text-navbar"
         >Inicio</router-link
       >
-      <router-link @click="closeMenu" to="/articles" class="text-navbar"
-        >Artículos</router-link
-      >
-      <router-link @click="closeMenu" to="/opinion" class="text-navbar"
-        >Opinión</router-link
-      >
       <router-link @click="closeMenu" to="/About-item" class="text-navbar"
         >Nosotros</router-link
       >
       <router-link @click="closeMenu" to="/NewsLetter-item" class="text-navbar"
         >Newsletter</router-link
       >
+      <router-link @click="closeMenu" to="/articles" class="text-navbar"
+        >Artículos</router-link
+      >
+      <router-link @click="closeMenu" to="/opinion" class="text-navbar"
+        >Opinión</router-link
+      >
+      
     </div>
     <div class="hamburger" @click="toggleMenu">☰</div>
   </nav>

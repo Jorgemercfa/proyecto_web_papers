@@ -81,7 +81,7 @@ onBeforeUnmount(() => {
     </div>
 
     <div class="text-home">
-      <strong>Las Luces de Palpanuma</strong> es una revista académica y de opinión dedicada a difundir
+      <strong>Paper</strong> es una revista académica y de opinión dedicada a difundir
       conocimiento riguroso en ciencias sociales, economía, política y cultura. Nuestro objetivo es
       acercar la investigación y el pensamiento crítico a lectores comprometidos con comprender y
       transformar la realidad latinoamericana.

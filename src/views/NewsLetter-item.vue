@@ -3,8 +3,8 @@ import { computed, ref, onMounted } from 'vue';
 import navbar from '@/components/Navbar-item.vue';
 import Footer from '@/components/Footer-item.vue';
 
-const AUTHOR_USER = 'octavio';
-const AUTHOR_PASSWORD = 'Palpanuma2026';
+const AUTHOR_USER = 'fabiana valdivia';
+const AUTHOR_PASSWORD = 'wert!hwrdv#2786';
 const SESSION_STORAGE_KEY = 'palpanuma-newsletter-author';
 
 const GITHUB_USER = process.env.VUE_APP_GITHUB_USER || '';
@@ -311,10 +311,9 @@ function formatDate(date) {
 
   <main class="newsletter-page">
     <section class="newsletter-container">
-      <h1 class="title">Newsletter del autor</h1>
+      <h1 class="title">Newsletter</h1>
       <p class="subtitle">
-        Aquí se publican notas, avances y fotos del proceso creativo de
-        <strong>Las luces de Palpanuma</strong>.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
       <p v-if="syncError" class="warning-text">{{ syncError }}</p>
 
@@ -338,13 +337,11 @@ function formatDate(date) {
             v-model="loginForm.user"
             type="text"
             placeholder="Usuario"
-            autocomplete="username"
           />
           <input
             v-model="loginForm.password"
             type="password"
             placeholder="Contraseña"
-            autocomplete="current-password"
           />
         </div>
 

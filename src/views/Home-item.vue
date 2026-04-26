@@ -2,7 +2,23 @@
 import Navbar from '@/components/Navbar-item.vue';
 import Footer from '@/components/Footer-item.vue';
 
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+import { articles } from '@/data/articles.js';
+import { opinions } from '@/data/opinions.js';
+
+const latestArticles = computed(() =>
+  [...articles].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3)
+);
+
+const featuredOpinions = computed(() =>
+  opinions.filter(o => o.featured).slice(0, 2)
+);
+
+function formatDate(dateStr) {
+  const [year, month, day] = dateStr.split('-');
+  const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  return `${parseInt(day)} ${months[parseInt(month) - 1]}. ${year}`;
+}
 
 /* =============================
    CARRUSEL PRINCIPAL
@@ -65,21 +81,54 @@ onBeforeUnmount(() => {
     </div>
 
     <div class="text-home">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      <strong>Las Luces de Palpanuma</strong> es una revista académica y de opinión dedicada a difundir
+      conocimiento riguroso en ciencias sociales, economía, política y cultura. Nuestro objetivo es
+      acercar la investigación y el pensamiento crítico a lectores comprometidos con comprender y
+      transformar la realidad latinoamericana.
     </div>
-    <!-- <h1 class="title-home">Libros</h1>
-    <div class="our-stories">
-      <router-link
-        v-for="storie in stories"
-        :key="storie.id"
-        :to="{ name: 'storieDetails', params: { id: storie.id } }"
-        class="logs-item"
-      >
-        <img class="card-icons" :src="storie.image2" :alt="storie.name" />
-        <div>{{ storie.name }}</div>
-      </router-link>
-    </div> -->
-  </div> 
+
+    <!-- Sección: Últimos Artículos -->
+    <section class="home-section">
+      <h2 class="title-home">Últimos Artículos</h2>
+      <div class="home-articles-grid">
+        <div
+          v-for="article in latestArticles"
+          :key="article.id"
+          class="home-article-card"
+        >
+          <div class="home-article-card-top">
+            <span class="home-badge">{{ article.category }}</span>
+            <span class="home-date">{{ formatDate(article.date) }}</span>
+          </div>
+          <h3 class="home-article-title">{{ article.title }}</h3>
+          <p class="home-article-authors">{{ article.authors }}</p>
+        </div>
+      </div>
+      <div class="home-section-footer">
+        <router-link to="/articles" class="home-view-all-btn">Ver todos los artículos →</router-link>
+      </div>
+    </section>
+
+    <!-- Sección: Columnas de Opinión Destacadas -->
+    <section class="home-section home-section--alt">
+      <h2 class="title-home">Columnas de Opinión Destacadas</h2>
+      <div class="home-opinions-grid">
+        <div
+          v-for="opinion in featuredOpinions"
+          :key="opinion.id"
+          class="home-opinion-card"
+        >
+          <span class="home-badge home-badge--blue">{{ opinion.category }}</span>
+          <h3 class="home-opinion-title">{{ opinion.title }}</h3>
+          <p class="home-opinion-author">{{ opinion.author }}</p>
+          <p class="home-opinion-excerpt">{{ opinion.excerpt }}</p>
+        </div>
+      </div>
+      <div class="home-section-footer">
+        <router-link to="/opinion" class="home-view-all-btn">Ver todas las columnas →</router-link>
+      </div>
+    </section>
+  </div>
 
   <footer>
     <Footer />
@@ -344,6 +393,183 @@ onBeforeUnmount(() => {
 
   .customer-icons {
     height: 45px;
+  }
+}
+
+/* ===== SECCIONES HOME: ARTÍCULOS Y OPINIONES ===== */
+
+.home-section {
+  padding: 60px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-section--alt {
+  background: #f8f4f0;
+  max-width: 100%;
+  padding: 60px 5%;
+}
+
+.home-section--alt .home-articles-grid,
+.home-section--alt .home-opinions-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.home-article-card {
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.home-article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.home-article-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.home-badge {
+  background: #d06e12;
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+.home-badge--blue {
+  background: #456a9a;
+}
+
+.home-date {
+  font-size: 0.8rem;
+  color: #999;
+  font-family: 'Inter', sans-serif;
+}
+
+.home-article-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.home-article-authors {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.83rem;
+  color: #d06e12;
+  margin: 0;
+  font-weight: 500;
+}
+
+.home-opinions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.home-opinion-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.home-opinion-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.11);
+}
+
+.home-opinion-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.home-opinion-author {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.87rem;
+  color: #456a9a;
+  font-weight: 600;
+  margin: 0;
+}
+
+.home-opinion-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.65;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.home-section-footer {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.home-view-all-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #d06e12;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.home-view-all-btn:hover {
+  background: #b85e0e;
+}
+
+@media (max-width: 900px) {
+  .home-articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-opinions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-articles-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

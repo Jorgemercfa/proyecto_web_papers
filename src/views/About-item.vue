@@ -14,26 +14,17 @@ import Footer from '@/components/Footer-item.vue';
 
       <div class="about-card">
         <p class="about-text">
-          Somos una empresa especializada en control integral de plagas,
-          brindando atención experta y personalizada. Ofrecemos servicios de
-          desinsectación, desratización, desinfección, mantenimiento de
-          insectocutores, limpieza de tanques y cisternas y control aviar.
-          Trabajamos con productos seguros y equipos de alta tecnología,
-          contando con autorización de DIGESA.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
 
         <h2>Visión</h2>
         <p>
-          Ser reconocidos como expertos asesores en control de plagas,
-          distinguiéndonos por nuestra atención personalizada y resultados
-          efectivos que garantizan la satisfacción total del cliente.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
 
         <h2>Misión</h2>
         <p>
-          Brindar un servicio profesional y personalizado, destacando por la
-          precisión de nuestros diagnósticos, eficacia de nuestras
-          intervenciones y compromiso continuo con la calidad y seguridad.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
     </div>
@@ -62,14 +53,14 @@ import Footer from '@/components/Footer-item.vue';
   content: '';
   width: 80px;
   height: 4px;
-  background-color: #42ae1a; /* Línea roja */
+  background-color: #d06e12; /* Línea roja */
   display: block;
   margin-top: 10px;
   border-radius: 2px;
 }
 
 .about-card {
-  background-color: #42ae1a; /* Azul oscuro como la imagen */
+  background-color: #d06e12; /* Azul oscuro como la imagen */
   color: #f2f2f2;
   padding: 50px;
   border-radius: 20px;

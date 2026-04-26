@@ -64,7 +64,7 @@ function formatDate(dateStr) {
     <h2 class="opinion-grid-heading">Todas las columnas</h2>
     <div class="opinion-grid">
       <div
-        v-for="opinion in opinions"
+        v-for="opinion in gridOpinions"
         :key="opinion.id"
         class="opinion-card"
       >

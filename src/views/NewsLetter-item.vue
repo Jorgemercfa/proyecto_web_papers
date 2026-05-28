@@ -439,99 +439,71 @@ function formatDate(date) {
 
 <style scoped>
 .newsletter-page {
-  padding: 50px 6% 90px;
+  @apply py-[50px] px-[6%] pb-[90px];
 }
 
 .newsletter-container {
-  max-width: 980px;
-  margin: 0 auto;
+  @apply max-w-[980px] mx-auto;
 }
 
 .title {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  margin-bottom: 10px;
+  @apply mb-[10px];
 }
 
 .subtitle {
-  margin-bottom: 30px;
+  @apply mb-[30px];
   color: #444;
 }
 
 .author-box,
 .author-panel,
 .post-card {
+  @apply rounded-2xl shadow-lg p-6 mb-6;
   background: #d06e12;
   color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  padding: 24px;
-  margin-bottom: 24px;
 }
 
 .author-panel-header,
 .post-header {
-  display: flex;
-  color: #fff;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
+  @apply flex justify-between items-center gap-3 text-white;
 }
 
 .form-grid {
-  display: grid;
-  gap: 12px;
-  margin: 16px 0;
+  @apply grid gap-3 my-4;
 }
 
 input,
 textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #d8d8d8;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  box-sizing: border-box;
+  @apply w-full p-3 border border-[#d8d8d8] rounded-xl text-[0.95rem] box-border;
 }
 
 .upload-label {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 8px;
-  border-radius: 8px;
-  margin-bottom: 16px;
+  @apply inline-flex flex-col gap-2 rounded-lg mb-4;
 }
 
 .preview-grid,
 .post-photos {
-  display: grid;
+  @apply grid gap-3 my-3 mb-5;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 12px;
-  margin: 12px 0 20px;
 }
 
 .preview-item img,
 .post-photos img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
+  @apply w-full h-[150px] object-cover rounded-xl;
 }
 
 .post-date {
-  font-size: 0.9rem;
+  @apply text-[0.9rem];
 }
 
 .post-note {
-  line-height: 1.8;
+  @apply leading-[1.8];
 }
 
 .primary-btn,
 .danger-btn {
-  border: none;
-  border-radius: 8px;
-  padding: 10px 14px;
-  cursor: pointer;
-  font-weight: 600;
+  @apply border-none rounded-lg py-[10px] px-[14px] cursor-pointer font-semibold;
 }
 
 .primary-btn {
@@ -545,38 +517,29 @@ textarea {
 }
 
 .error-text {
+  @apply mt-[10px];
   color: #b92d2d;
-  margin-top: 10px;
 }
 
 .warning-text {
+  @apply mb-4;
   color: #8a5a00;
-  margin-bottom: 16px;
 }
 
 @media (max-width: 700px) {
   .author-panel-header,
   .post-header {
-    flex-direction: column;
-    align-items: flex-start;
+    @apply flex-col items-start;
   }
 }
 
 .author-toggle-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 12px;
+  @apply flex justify-end mb-3;
 }
 
 .toggle-login-btn {
-  background: transparent;
-  border: none;
+  @apply bg-transparent border-none text-[0.82rem] cursor-pointer px-2 py-1 rounded-md transition-colors duration-200;
   color: #888;
-  font-size: 0.82rem;
-  cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 6px;
-  transition: color 0.2s;
 }
 
 .toggle-login-btn:hover {

@@ -61,16 +61,8 @@ html {
 }
 
 .navbar-area {
+  @apply flex items-center justify-between sticky top-0 z-[1000] shadow-lg px-8 h-[70px];
   background: linear-gradient(90deg, #d06e12, #d06e12);
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 30px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 /* LOGO */
@@ -82,17 +74,11 @@ html {
 
 /* LINKS DESKTOP */
 .link-style {
-  display: flex;
-  align-items: center;
-  gap: 25px;
+  @apply flex items-center gap-6;
 }
 
 .text-navbar {
-  color: white;
-  text-decoration: none;
-  font-size: 0.95rem;
-  position: relative;
-  transition: 0.3s ease;
+  @apply text-white no-underline text-[0.95rem] relative transition duration-300;
 }
 
 /* Línea animada hover */
@@ -122,38 +108,27 @@ html {
 
 /* HAMBURGER */
 .hamburger {
-  display: none;
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
+  @apply hidden text-[26px] text-white cursor-pointer;
 }
 
 /* MOBILE */
 @media (max-width: 900px) {
   .link-style {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
+    @apply absolute top-[70px] left-0 w-full flex-col py-6 gap-5 hidden;
     background: linear-gradient(180deg, #d06e12, #d06e12);
-    padding: 25px 0;
-    gap: 20px;
-    display: none;
     animation: fadeIn 0.3s ease;
   }
 
   .link-style.show-menu {
-    display: flex;
+    @apply flex;
   }
 
   .hamburger {
-    display: block;
+    @apply block;
   }
 
   .text-navbar {
-    text-align: center;
-    padding: 10px 0;
+    @apply text-center py-[10px];
   }
 
   .text-navbar::after {

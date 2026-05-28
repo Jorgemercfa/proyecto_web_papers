@@ -137,24 +137,19 @@ onBeforeUnmount(() => {
 
 <style>
 .img-home {
-  width: 100%;
+  @apply w-full object-cover transition-opacity duration-[800ms] ease-in-out;
   height: 80vh;
   min-height: 500px;
-  object-fit: cover;
-  object-position: center 30%; /* 🔥 mueve el enfoque hacia arriba */
-  transition: opacity 0.8s ease;
+  object-position: center 30%;
 }
 
 /* .home-area {
 } */
 
 .title-home {
-  text-align: center;
+  @apply text-center font-bold relative;
   font-size: 32px;
-  font-weight: 700;
   margin: 80px 0 40px 0;
-  text-align: center;
-  position: relative;
 }
 
 .title-home::after {
@@ -170,12 +165,9 @@ onBeforeUnmount(() => {
 }
 
 .text-home {
-  max-width: 900px;
+  @apply max-w-[900px] mx-auto text-center text-lg leading-[1.7];
   margin: 60px auto;
   font-family: 'Inter', sans-serif;
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.7;
 }
 
 .main-text-home{
@@ -213,7 +205,7 @@ onBeforeUnmount(() => {
   color: #ffffff;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none; /* quita el subrayado */
+  text-decoration: none;
 }
 
 .logs-item:hover {
@@ -277,8 +269,7 @@ onBeforeUnmount(() => {
 
 /* Estilos para el carrusel */
 .carousel-container {
-  position: relative;
-  width: 100%;
+  @apply relative w-full;
 }
 
 .carousel-container::after {
@@ -289,21 +280,11 @@ onBeforeUnmount(() => {
 }
 
 .carousel-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  @apply absolute bottom-5 left-0 right-0 flex justify-center gap-[10px];
 }
 
 .carousel-dots span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  @apply w-3 h-3 rounded-full cursor-pointer transition-colors duration-300;
 }
 
 .carousel-dots .active {
@@ -399,15 +380,13 @@ onBeforeUnmount(() => {
 /* ===== SECCIONES HOME: ARTÍCULOS Y OPINIONES ===== */
 
 .home-section {
-  padding: 60px 5%;
-  max-width: 1200px;
-  margin: 0 auto;
+  @apply py-[60px] px-[5%] max-w-6xl mx-auto;
 }
 
 .home-section--alt {
+  @apply w-full py-[60px] px-[5%];
   background: #f8f4f0;
   max-width: 100%;
-  padding: 60px 5%;
 }
 
 .home-section--alt .home-articles-grid,
@@ -417,42 +396,24 @@ onBeforeUnmount(() => {
 }
 
 .home-articles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 48px;
+  @apply grid grid-cols-1 gap-6 mt-12;
 }
 
 .home-article-card {
-  background: white;
-  border-radius: 12px;
-  padding: 22px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  @apply bg-white rounded-xl p-[22px] shadow-md flex flex-col gap-2 transition-all duration-[220ms];
 }
 
 .home-article-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  @apply -translate-y-1 shadow-lg;
 }
 
 .home-article-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  @apply flex items-center justify-between gap-2;
 }
 
 .home-badge {
+  @apply text-white text-xs font-bold py-[3px] px-[9px] rounded-xl;
   background: #d06e12;
-  color: white;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 3px 9px;
-  border-radius: 10px;
   font-family: 'Inter', sans-serif;
 }
 
@@ -461,74 +422,50 @@ onBeforeUnmount(() => {
 }
 
 .home-date {
-  font-size: 0.8rem;
-  color: #999;
+  @apply text-[0.8rem] text-[#999];
   font-family: 'Inter', sans-serif;
 }
 
 .home-article-title {
+  @apply text-[0.97rem] font-bold m-0 leading-snug;
   font-family: 'Inter', sans-serif;
-  font-size: 0.97rem;
-  font-weight: 700;
   color: #1a1a2e;
-  margin: 0;
-  line-height: 1.4;
 }
 
 .home-article-authors {
+  @apply text-[0.83rem] m-0 font-medium;
   font-family: 'Inter', sans-serif;
-  font-size: 0.83rem;
   color: #d06e12;
-  margin: 0;
-  font-weight: 500;
 }
 
 .home-opinions-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 48px;
+  @apply grid grid-cols-1 gap-6 mt-12;
 }
 
 .home-opinion-card {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  @apply bg-white rounded-xl p-6 shadow-md flex flex-col gap-[10px] transition-all duration-[220ms];
 }
 
 .home-opinion-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.11);
+  @apply -translate-y-1 shadow-lg;
 }
 
 .home-opinion-title {
+  @apply text-base font-bold m-0 leading-snug;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
   color: #1a1a2e;
-  margin: 0;
-  line-height: 1.4;
 }
 
 .home-opinion-author {
+  @apply text-[0.87rem] font-semibold m-0;
   font-family: 'Inter', sans-serif;
-  font-size: 0.87rem;
   color: #456a9a;
-  font-weight: 600;
-  margin: 0;
 }
 
 .home-opinion-excerpt {
+  @apply text-[0.88rem] leading-[1.65] m-0;
   font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
   color: #555;
-  line-height: 1.65;
-  margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -536,40 +473,32 @@ onBeforeUnmount(() => {
 }
 
 .home-section-footer {
-  text-align: center;
-  margin-top: 36px;
+  @apply text-center mt-9;
 }
 
 .home-view-all-btn {
-  display: inline-block;
-  padding: 12px 28px;
-  background: #d06e12;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
+  @apply inline-block py-3 px-7 text-white rounded-lg no-underline text-[0.95rem] font-semibold transition-all duration-200;
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: background 0.2s;
+  background: #d06e12;
 }
 
 .home-view-all-btn:hover {
   background: #b85e0e;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 768px) {
   .home-articles-grid {
-    grid-template-columns: repeat(2, 1fr);
+    @apply grid-cols-2;
   }
 
   .home-opinions-grid {
-    grid-template-columns: 1fr;
+    @apply grid-cols-2;
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1024px) {
   .home-articles-grid {
-    grid-template-columns: 1fr;
+    @apply grid-cols-3;
   }
 }
 </style>

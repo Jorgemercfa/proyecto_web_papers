@@ -41,28 +41,18 @@ const year = new Date().getFullYear();
 
 <style>
 .footer-area {
+  @apply mt-24 text-white;
   background-color: #ab5d14;
-  color: white;
-  margin-top: 100px;
 }
 
 /* CONTENEDOR */
 .footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 50px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
+  @apply max-w-6xl mx-auto px-[5%] py-12 flex justify-between items-start gap-10;
 }
 
 /* TÍTULOS */
 .titile-footer {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  position: relative;
-  font-weight: 600;
+  @apply text-[1.1rem] font-semibold mb-4 relative;
 }
 
 /* Línea decorativa (BLANCA para que combine con el verde) */
@@ -79,22 +69,17 @@ const year = new Date().getFullYear();
 
 /* TEXTO */
 .footer-text {
-  font-size: 0.95rem;
+  @apply text-[0.95rem] leading-relaxed;
   color: #e6e6e6;
-  line-height: 1.6;
 }
 
 /* ICONOS */
 .social-icons {
-  display: flex;
-  gap: 20px;
-  margin-top: 15px;
+  @apply flex gap-5 mt-4;
 }
 
 .social-icons a {
-  font-size: 1.8rem;
-  color: #ffffff;
-  transition: 0.3s ease;
+  @apply text-[1.8rem] text-white transition duration-300;
 }
 
 .social-icons a:hover {
@@ -103,19 +88,15 @@ const year = new Date().getFullYear();
 }
 /* BARRA INFERIOR */
 .footer-bottom {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.85rem;
+  @apply text-center py-5 text-[0.85rem] border-t;
   color: #cccccc;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    @apply flex-col items-center text-center;
   }
 
   .titile-footer::after {

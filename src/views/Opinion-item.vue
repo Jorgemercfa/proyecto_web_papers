@@ -111,105 +111,71 @@ function formatDate(dateStr) {
 <style scoped>
 /* ===== HERO ===== */
 .opinion-hero {
+  @apply py-20 px-[5%] text-center text-white;
   background: linear-gradient(135deg, #456a9a, #d06e12);
-  padding: 80px 5%;
-  text-align: center;
-  color: white;
 }
 
 .opinion-hero-title {
+  @apply text-[2.8rem] font-bold m-0 mb-4;
   font-family: 'Inter', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin: 0 0 16px;
 }
 
 .opinion-hero-desc {
+  @apply text-[1.1rem] max-w-[700px] mx-auto leading-[1.7] opacity-[0.92];
   font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-  opacity: 0.92;
 }
 
 /* ===== FEATURED ===== */
 .opinion-featured-section {
+  @apply py-[60px] px-[5%] border-b;
   background: #f8f4f0;
-  padding: 60px 5%;
-  border-bottom: 1px solid #e8ddd4;
+  border-color: #e8ddd4;
 }
 
 .opinion-featured-inner {
-  max-width: 800px;
-  margin: 0 auto;
+  @apply max-w-[800px] mx-auto;
 }
 
 .opinion-featured-label {
-  display: inline-block;
+  @apply inline-block text-xs font-bold tracking-[1.5px] uppercase mb-3;
   font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
   color: #d06e12;
-  margin-bottom: 12px;
 }
 
 .opinion-badge {
+  @apply text-white text-xs font-semibold py-[3px] px-[10px] rounded-xl ml-[10px];
   background: #456a9a;
-  color: white;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 12px;
   font-family: 'Inter', sans-serif;
-  margin-left: 10px;
 }
 
 .opinion-featured-title {
+  @apply text-[1.9rem] font-bold mt-4 mb-3 leading-snug;
   font-family: 'Inter', sans-serif;
-  font-size: 1.9rem;
-  font-weight: 700;
   color: #1a1a2e;
-  margin: 16px 0 12px;
-  line-height: 1.3;
 }
 
 .opinion-featured-author {
+  @apply text-[0.95rem] m-0 mb-4;
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
   color: #555;
-  margin: 0 0 16px;
 }
 
 .opinion-featured-bio {
-  font-style: italic;
+  @apply italic;
   color: #888;
 }
 
 .opinion-featured-excerpt {
+  @apply text-[1.05rem] leading-[1.75] m-0 mb-7 italic pl-5 border-l-4;
   font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
+  border-color: #d06e12;
   color: #444;
-  line-height: 1.75;
-  border-left: 4px solid #d06e12;
-  padding-left: 20px;
-  margin: 0 0 28px;
-  font-style: italic;
 }
 
 .opinion-featured-btn {
-  padding: 12px 28px;
-  background: #d06e12;
-  color: white;
-  border: none;
-  border-radius: 8px;
+  @apply py-3 px-7 text-white border-none rounded-lg text-[0.95rem] font-semibold cursor-pointer transition-all duration-200;
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
+  background: #d06e12;
 }
 
 .opinion-featured-btn:hover {
@@ -218,19 +184,13 @@ function formatDate(dateStr) {
 
 /* ===== GRID ===== */
 .opinion-grid-section {
-  padding: 60px 5%;
-  max-width: 1200px;
-  margin: 0 auto;
+  @apply py-[60px] px-[5%] max-w-6xl mx-auto;
 }
 
 .opinion-grid-heading {
+  @apply text-[1.6rem] font-bold m-0 mb-9 text-center relative;
   font-family: 'Inter', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 700;
   color: #1a1a2e;
-  margin: 0 0 36px;
-  text-align: center;
-  position: relative;
 }
 
 .opinion-grid-heading::after {
@@ -246,73 +206,48 @@ function formatDate(dateStr) {
 }
 
 .opinion-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  @apply grid grid-cols-2 gap-7;
 }
 
 .opinion-card {
-  background: white;
-  border-radius: 12px;
-  padding: 28px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  @apply bg-white rounded-xl p-7 shadow-md flex flex-col gap-[10px] transition-all duration-[250ms];
 }
 
 .opinion-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  @apply -translate-y-1 shadow-xl;
 }
 
 .opinion-card-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  @apply flex items-center gap-2;
 }
 
 .opinion-card-date {
-  font-size: 0.82rem;
-  color: #888;
+  @apply text-[0.82rem] text-[#888] ml-auto;
   font-family: 'Inter', sans-serif;
-  margin-left: auto;
 }
 
 .opinion-card-title {
+  @apply text-[1.05rem] font-bold m-0 leading-snug;
   font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
   color: #1a1a2e;
-  margin: 0;
-  line-height: 1.4;
 }
 
 .opinion-card-author {
+  @apply text-[0.9rem] font-semibold m-0;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
   color: #d06e12;
-  font-weight: 600;
-  margin: 0;
 }
 
 .opinion-card-bio {
+  @apply text-[0.82rem] italic m-0 leading-[1.5];
   font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
   color: #888;
-  font-style: italic;
-  margin: 0;
-  line-height: 1.5;
 }
 
 .opinion-card-excerpt {
+  @apply text-[0.9rem] leading-[1.65] m-0 flex-1;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
   color: #555;
-  line-height: 1.65;
-  margin: 0;
-  flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -320,18 +255,10 @@ function formatDate(dateStr) {
 }
 
 .opinion-card-btn {
-  margin-top: auto;
-  padding: 9px 18px;
-  background: transparent;
-  color: #456a9a;
-  border: 2px solid #456a9a;
-  border-radius: 8px;
+  @apply mt-auto py-[9px] px-[18px] bg-transparent border-2 rounded-lg text-[0.88rem] font-semibold cursor-pointer transition-all duration-200 self-start;
   font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  align-self: flex-start;
+  border-color: #456a9a;
+  color: #456a9a;
 }
 
 .opinion-card-btn:hover {
@@ -341,38 +268,17 @@ function formatDate(dateStr) {
 
 /* ===== MODAL ===== */
 .modal-overlay {
-  position: fixed;
-  inset: 0;
+  @apply fixed inset-0 z-[2000] flex items-center justify-center p-5;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
 }
 
 .modal-content {
-  background: white;
-  border-radius: 16px;
-  padding: 40px;
-  max-width: 720px;
-  width: 100%;
-  max-height: 85vh;
-  overflow-y: auto;
-  position: relative;
+  @apply bg-white rounded-2xl p-10 max-w-[720px] w-full max-h-[85vh] overflow-y-auto relative;
   font-family: 'Inter', sans-serif;
 }
 
 .modal-close {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #555;
-  line-height: 1;
+  @apply absolute top-4 right-5 bg-transparent border-none text-[1.8rem] cursor-pointer text-[#555] leading-none;
 }
 
 .modal-close:hover {
@@ -380,57 +286,38 @@ function formatDate(dateStr) {
 }
 
 .modal-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  @apply flex items-center gap-3 mb-4;
 }
 
 .modal-date {
-  font-size: 0.85rem;
-  color: #888;
+  @apply text-[0.85rem] text-[#888];
 }
 
 .modal-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+  @apply text-[1.4rem] font-bold m-0 mb-2 leading-snug;
   color: #1a1a2e;
-  margin: 0 0 10px;
-  line-height: 1.35;
 }
 
 .modal-author {
-  font-size: 1rem;
+  @apply text-[0.95rem] font-semibold m-0 mb-1;
   color: #d06e12;
-  margin: 0 0 4px;
 }
 
 .modal-author-bio {
-  font-size: 0.88rem;
+  @apply text-[0.88rem] italic m-0 mb-5;
   color: #888;
-  font-style: italic;
-  margin: 0 0 20px;
 }
 
 .modal-content-text p {
-  font-size: 0.96rem;
+  @apply text-[0.95rem] leading-[1.75] mb-4;
   color: #444;
-  line-height: 1.8;
-  margin-bottom: 16px;
 }
 
 .btn-close-modal {
-  margin-top: 8px;
-  padding: 10px 22px;
+  @apply py-[10px] px-[22px] border-none rounded-lg text-[0.9rem] font-semibold cursor-pointer transition-all duration-200;
+  font-family: 'Inter', sans-serif;
   background: #f0ebe5;
   color: #555;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-  font-family: 'Inter', sans-serif;
 }
 
 .btn-close-modal:hover {
@@ -440,21 +327,21 @@ function formatDate(dateStr) {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .opinion-grid {
-    grid-template-columns: 1fr;
+    @apply grid-cols-1;
   }
 }
 
 @media (max-width: 640px) {
   .opinion-hero-title {
-    font-size: 2rem;
+    @apply text-[2rem];
   }
 
   .opinion-featured-title {
-    font-size: 1.5rem;
+    @apply text-[1.5rem];
   }
 
   .modal-content {
-    padding: 24px 20px;
+    @apply p-5;
   }
 }
 </style>

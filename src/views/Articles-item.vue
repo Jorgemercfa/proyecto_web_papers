@@ -117,159 +117,101 @@ function formatDate(dateStr) {
 <style scoped>
 /* ===== HERO ===== */
 .articles-hero {
+  @apply py-20 px-[5%] text-center text-white;
   background: linear-gradient(135deg, #d06e12, #456a9a);
-  padding: 80px 5%;
-  text-align: center;
-  color: white;
 }
 
 .articles-hero-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin: 0 0 16px;
+  @apply font-['Inter',sans-serif] text-[2.8rem] font-bold mb-4;
 }
 
 .articles-hero-desc {
+  @apply text-[1.1rem] max-w-[700px] mx-auto leading-[1.7] opacity-[0.92];
   font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-  opacity: 0.92;
 }
 
 /* ===== FILTROS ===== */
 .articles-filter-section {
-  padding: 32px 5%;
+  @apply py-8 px-[5%] border-b;
   background: #f8f4f0;
-  border-bottom: 1px solid #e8ddd4;
+  border-color: #e8ddd4;
 }
 
 .articles-filter-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  max-width: 900px;
-  margin: 0 auto;
+  @apply flex flex-wrap gap-3 justify-center max-w-[900px] mx-auto;
 }
 
 .filter-btn {
-  padding: 8px 20px;
-  border-radius: 24px;
-  border: 2px solid #d06e12;
-  background: transparent;
-  color: #d06e12;
+  @apply px-5 py-2 rounded-[24px] border-2 bg-transparent text-[0.9rem] font-medium cursor-pointer transition-all duration-200;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  border-color: #d06e12;
+  color: #d06e12;
 }
 
 .filter-btn:hover,
 .filter-btn--active {
+  @apply text-white;
   background: #d06e12;
-  color: white;
 }
 
 /* ===== GRID ===== */
 .articles-grid-section {
-  padding: 48px 5%;
-  max-width: 1200px;
-  margin: 0 auto;
+  @apply py-12 px-[5%] max-w-6xl mx-auto;
 }
 
 .articles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  @apply grid grid-cols-3 gap-7;
 }
 
 .article-card {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  @apply bg-white rounded-xl p-6 shadow-md flex flex-col gap-[10px] transition-all duration-[250ms];
 }
 
 .article-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+  @apply -translate-y-1 shadow-xl;
 }
 
 .article-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  @apply flex items-center justify-between gap-2;
 }
 
 .article-badge {
+  @apply text-white text-xs font-semibold px-[10px] py-[3px] rounded-xl whitespace-nowrap;
   background: #456a9a;
-  color: white;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 12px;
   font-family: 'Inter', sans-serif;
-  white-space: nowrap;
 }
 
 .article-date {
-  font-size: 0.82rem;
-  color: #888;
+  @apply text-[0.82rem] text-[#888];
   font-family: 'Inter', sans-serif;
 }
 
 .article-card-title {
+  @apply text-base font-bold m-0 leading-snug;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
   color: #1a1a2e;
-  margin: 0;
-  line-height: 1.4;
 }
 
 .article-card-authors {
+  @apply text-[0.85rem] m-0 font-medium;
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
   color: #d06e12;
-  margin: 0;
-  font-weight: 500;
 }
 
 .article-card-abstract {
+  @apply text-[0.9rem] leading-relaxed m-0 flex-1;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
   color: #555;
-  line-height: 1.6;
-  margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  flex: 1;
 }
 
 .article-card-btn {
-  margin-top: auto;
-  padding: 9px 18px;
-  background: #d06e12;
-  color: white;
-  border: none;
-  border-radius: 8px;
+  @apply mt-auto py-[9px] px-[18px] text-white border-none rounded-lg text-[0.88rem] font-semibold cursor-pointer transition-all duration-200 self-start;
   font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-  align-self: flex-start;
+  background: #d06e12;
 }
 
 .article-card-btn:hover {
@@ -277,47 +219,23 @@ function formatDate(dateStr) {
 }
 
 .articles-empty {
-  text-align: center;
-  color: #888;
+  @apply text-center text-[#888] text-base py-10;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  padding: 40px 0;
 }
 
 /* ===== MODAL ===== */
 .modal-overlay {
-  position: fixed;
-  inset: 0;
+  @apply fixed inset-0 z-[2000] flex items-center justify-center p-5;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
 }
 
 .modal-content {
-  background: white;
-  border-radius: 16px;
-  padding: 40px;
-  max-width: 680px;
-  width: 100%;
-  max-height: 85vh;
-  overflow-y: auto;
-  position: relative;
+  @apply bg-white rounded-2xl p-10 max-w-[680px] w-full max-h-[85vh] overflow-y-auto relative;
   font-family: 'Inter', sans-serif;
 }
 
 .modal-close {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #555;
-  line-height: 1;
+  @apply absolute top-4 right-5 bg-transparent border-none text-[1.8rem] cursor-pointer text-[#555] leading-none;
 }
 
 .modal-close:hover {
@@ -325,54 +243,35 @@ function formatDate(dateStr) {
 }
 
 .modal-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  @apply flex items-center gap-3 mb-4;
 }
 
 .modal-date {
-  font-size: 0.85rem;
-  color: #888;
+  @apply text-[0.85rem] text-[#888];
 }
 
 .modal-title {
-  font-size: 1.4rem;
-  font-weight: 700;
+  @apply text-[1.4rem] font-bold m-0 mb-2 leading-snug;
   color: #1a1a2e;
-  margin: 0 0 8px;
-  line-height: 1.35;
 }
 
 .modal-authors {
-  font-size: 0.95rem;
+  @apply text-[0.95rem] font-semibold m-0 mb-4;
   color: #d06e12;
-  font-weight: 600;
-  margin: 0 0 16px;
 }
 
 .modal-abstract {
-  font-size: 0.95rem;
+  @apply text-[0.95rem] leading-[1.75] m-0 mb-6;
   color: #444;
-  line-height: 1.75;
-  margin: 0 0 24px;
 }
 
 .modal-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  @apply flex gap-3 flex-wrap;
 }
 
 .btn-pdf {
-  padding: 10px 22px;
+  @apply py-[10px] px-[22px] text-white rounded-lg no-underline text-[0.9rem] font-semibold transition-all duration-200;
   background: #456a9a;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: background 0.2s;
 }
 
 .btn-pdf:hover {
@@ -380,15 +279,9 @@ function formatDate(dateStr) {
 }
 
 .btn-close-modal {
-  padding: 10px 22px;
+  @apply py-[10px] px-[22px] border-none rounded-lg text-[0.9rem] font-semibold cursor-pointer transition-all duration-200;
   background: #f0ebe5;
   color: #555;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
 }
 
 .btn-close-modal:hover {
@@ -398,21 +291,21 @@ function formatDate(dateStr) {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .articles-grid {
-    grid-template-columns: repeat(2, 1fr);
+    @apply grid-cols-2;
   }
 }
 
 @media (max-width: 640px) {
   .articles-hero-title {
-    font-size: 2rem;
+    @apply text-[2rem];
   }
 
   .articles-grid {
-    grid-template-columns: 1fr;
+    @apply grid-cols-1;
   }
 
   .modal-content {
-    padding: 24px 20px;
+    @apply p-5;
   }
 }
 </style>

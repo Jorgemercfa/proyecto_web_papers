@@ -24,11 +24,12 @@ function formatDate(dateStr) {
    CARRUSEL PRINCIPAL
 ============================= */
 
-import img1 from '@/assets/Palpanuma publicaciones.jpg';
-// import img2 from '@/assets/book_home_2.png';
-// import img3 from '@/assets/book_home_3.png';
+import img1 from '@/assets/home1.png';
+import img2 from '@/assets/home2.png';
+import img3 from '@/assets/home3.png';
+import img4 from '@/assets/home4.png';
 
-const images = [img1];
+const images = [img1, img2, img3, img4];
 
 const currentImageIndex = ref(0);
 const intervalId = ref(null);

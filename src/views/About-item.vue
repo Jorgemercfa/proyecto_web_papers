@@ -37,47 +37,33 @@ import Footer from '@/components/Footer-item.vue';
 
 <style>
 .about-container {
-  width: 85%;
-  max-width: 1100px;
-  margin: auto;
+  @apply w-[85%] max-w-[1100px] mx-auto;
 }
 
 .main-title {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  position: relative;
+  @apply text-5xl font-bold mb-5 relative;
 }
 
 .main-title::after {
   content: '';
   width: 80px;
   height: 4px;
-  background-color: #d06e12; /* Línea roja */
+  background-color: #d06e12;
   display: block;
   margin-top: 10px;
   border-radius: 2px;
 }
 
 .about-card {
-  background-color: #d06e12; /* Azul oscuro como la imagen */
-  color: #f2f2f2;
-  padding: 50px;
-  border-radius: 20px;
-  margin-top: 40px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-  line-height: 1.7;
+  @apply text-[#f2f2f2] p-[50px] rounded-[20px] mt-10 shadow-2xl leading-[1.7];
+  background-color: #d06e12;
 }
 
 .about-card h2 {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  font-size: 22px;
-  color: #ffffff;
+  @apply mt-8 mb-2 text-[22px] text-white;
 }
 
 .about-card p {
-  font-size: 16px;
-  margin-bottom: 15px;
+  @apply text-base mb-4;
 }
 </style>

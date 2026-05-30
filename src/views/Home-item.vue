@@ -82,10 +82,7 @@ onBeforeUnmount(() => {
     </div>
 
     <div class="text-home">
-      <strong>Paper</strong> es una revista académica y de opinión dedicada a difundir
-      conocimiento riguroso en ciencias sociales, economía, política y cultura. Nuestro objetivo es
-      acercar la investigación y el pensamiento crítico a lectores comprometidos con comprender y
-      transformar la realidad latinoamericana.
+      <strong>Corpolab</strong> es una revista académica y de opinión dedicadaa brindar información sobre derecho corporativo para los emprendedores de forma sencilla.
     </div>
 
     <!-- Sección: Últimos Artículos -->

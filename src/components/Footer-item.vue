@@ -9,7 +9,7 @@ const year = new Date().getFullYear();
       <div class="contact-footer">
         <h4 class="titile-footer">Contacto</h4>
         <div class="footer-text">
-          <div>ejemplo@gmail.com</div>
+          <div>corpolab@gmail.com</div>
         </div>
       </div>
       <div class="social-media">
@@ -23,18 +23,19 @@ const year = new Date().getFullYear();
             <i class="pi pi-instagram"></i>
           </a>
 
-          <!-- <a href="" target="_blank">
-            <i class="pi pi-youtube"></i>
-          </a>
-
           <a href="" target="_blank">
             <i class="pi pi-tiktok"></i>
+          </a> 
+
+          <!-- <a href="" target="_blank">
+            <i class="pi pi-youtube"></i>
           </a> -->
+
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      © {{ year }} XXXXXX. Todos los derechos reservados.
+      © {{ year }} CorpoLab. Todos los derechos reservados.
     </div>
   </footer>
 </template>

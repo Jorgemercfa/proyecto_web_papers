@@ -14,7 +14,7 @@ import Footer from '@/components/Footer-item.vue';
 
       <div class="about-card">
         <p class="about-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Somos un grupo de estudio que vemos el ambito legal enfocado en el derecho corporativo, con el objetivo de brindar información y análisis sobre temas legales relevantes para los emprendedores.
         </p>
 
         <h2>Visión</h2>
@@ -24,7 +24,7 @@ import Footer from '@/components/Footer-item.vue';
 
         <h2>Misión</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Brindar la información legal a los emprendedores de la forma más simple.
         </p>
       </div>
     </div>

@@ -6,7 +6,7 @@ module.exports = defineConfig({
   // 👇 Agrega esto
   chainWebpack: (config) => {
     config.plugin('html').tap((args) => {
-      args[0].title = 'Papers';
+      args[0].title = 'CorpoLab';
       return args;
     });
   },

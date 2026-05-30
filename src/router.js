@@ -7,11 +7,11 @@ import Articles from './views/Articles-item.vue';
 import Opinion from './views/Opinion-item.vue';
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/About-item', name: 'About', component: AboutItem },
-  { path: '/NewsLetter-item', name: 'NewsLetter', component: NewsLetter },
-  { path: '/articles', name: 'Articles', component: Articles },
-  { path: '/opinion', name: 'Opinion', component: Opinion },
+  { path: '/', name: 'Home', component: Home, meta: { title: 'Corpolab - Inicio' }  },
+  { path: '/About-item', name: 'About', component: AboutItem, meta: { title: 'Corpolab - Nosotros' } },
+  { path: '/NewsLetter-item', name: 'NewsLetter', component: NewsLetter, meta: { title: 'Corpolab - Blog' }  },
+  { path: '/articles', name: 'Articles', component: Articles, meta: { title: 'Corpolab - Artículos' } },
+  { path: '/opinion', name: 'Opinion', component: Opinion, meta: { title: 'Corpolab - Opinión' } },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 
